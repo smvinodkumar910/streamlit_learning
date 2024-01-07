@@ -28,10 +28,17 @@ def main():
       flow = InstalledAppFlow.from_client_secrets_file(
           "credentials.json", SCOPES
       )
+      flow.redirect_uri('https://applearning-weatherapp.streamlit.app/')
+
+      authorization_url, state = flow.authorization_url(
+        access_type='offline',
+        prompt='consent',
+        include_granted_scopes='true')
+      print(authorization_url)
       creds = flow.run_local_server(port=0)
     # Save the credentials for the next run
-    with open("token.json", "w") as token:
-      token.write(creds.to_json())
+    #with open("token.json", "w") as token:
+    #  token.write(creds.to_json())
 
   try:
     service = build("people", "v1", credentials=creds)

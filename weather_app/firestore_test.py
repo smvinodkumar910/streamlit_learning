@@ -6,8 +6,18 @@ client = firestore.Client()
 #user_details = doc_ref.get();
 
 
+class userObject:
+    
+    def __init__(self,credentials,name,key,expiry_days,preauthorized,role):
+        self.credentials=credentials
+        self.name=name
+        self.expiry_days=expiry_days
+        self.preauthorized=preauthorized
+        self.role = role
+        self.key = key
 
 
+user = userObject('k.shanthi910','Vinodkumar Madhavan','randomkey',5,)
 new_user = dict()
 new_user['user_email']='vmadhavan@gmail.com'
 new_user['user_name']='Vinodkumar Madhavan'
