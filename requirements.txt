@@ -1,0 +1,8 @@
+altair
+pandas
+streamlit
+google-cloud-firestore
+functions-framework==3.5.0
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
